@@ -62,8 +62,8 @@ public class RegisterCampaignController {
         Campaign campaign = builder(new Campaign())
                 .set(Campaign::setTitle, form.getTitle())
                 .set(Campaign::setStatement, form.getStatement())
-                .set(Campaign::setGoal, form.getGoal())
-                .set(Campaign::setCreatedBy, form.getCreatedBy())
+                .set(Campaign::setGoal, form.getGoalLong())
+                .set(Campaign::setCreatedBy, form.getCreatedByLong())
                 .build();
         campaignDao.insert(campaign);
 
