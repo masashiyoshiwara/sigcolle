@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Signature Collection</title>
+    <link href="http://fonts.googleapis.com/css?family=Exo:900" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css" rel="stylesheet"/>
+    <link href="/css/main.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="pusher">
+    <div class="ui fixed menu">
+        <div class="ui container">
+            <a href="/" class="header item">SIG COLLE</a>
+        </div>
+    </div>
+
+    <div class="full height image">
+        <div class="ui main container">
+            <div class="menu bar">
+            </div>
+            <div class="ui information container">
+                <div class="ui three column grid">
+                    <div class="column"></div>
+                    <div class="column">
+                        <h1 class="ui center aligned header">新規キャンペーン登録</h1>
+                        <form class="ui form" method="post" action="/register"
+                              th:action="@{~/register}">
+                            <div class="field">
+                                <input required type="text" maxlength='20' name="title" placeholder="キャンペーンタイトル" th:value="(${campaign.title}!=null)?${campaign.title}"/>
+                            </div>
+                            <div class="field">
+                                <input required type="text" maxlength='200' name="statement" placeholder="キャンペーン内容" th:value="(${campaign.statement}!=null)?${campaign.statement}"/>
+                            </div>
+                            <div class="field">
+                                <input required type="text" maxlength='5' name="goal" placeholder="達成人数" th:value="(${campaign.goal}!=null)?${campaign.goal}"/>
+                            </div>
+                            <div class="field">
+                                <input required type="text" maxlength='20' name="createdBy" placeholder="登録者" th:value="(${campaign.createdBy}!=null)?${campaign.createdBy}"/>
+                            </div>
+                            <button class="ui fluid red button">登録</button>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
