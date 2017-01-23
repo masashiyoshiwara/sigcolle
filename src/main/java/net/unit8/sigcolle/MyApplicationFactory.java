@@ -31,6 +31,7 @@ public class MyApplicationFactory implements ApplicationFactory {
             r.get("/").to(IndexController.class, "index");
             r.get("/campaign/:campaignId").to(CampaignController.class, "index");
             r.post("/campaign/:campaignId").to(CampaignController.class, "sign");
+            r.post("/campaign/:campaignId/delete").to(CampaignController.class, "delete");
             r.get("/campaign/:campaignId/signatures").to(SignatureController.class, "list");
             r.get("/register").to(RegisterController.class, "index");
             r.post("/register").to(RegisterController.class, "register");
