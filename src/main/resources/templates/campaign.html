@@ -49,6 +49,12 @@ xmlns:th="http://www.thymeleaf.org">
                     <div class="header" th:text="${message}">Thank you</div>
                 </div>
 
+                <form class="ui form" method="post" action="/campaign/1"
+                      th:action="@{~/campaign/{id}(id=${campaign.campaignId})/delete}">
+                    <button class="ui fluid red button">ふおお</button>
+                </form>
+
+
 
                 <div class="ui grid">
                     <div class="ten wide column">
