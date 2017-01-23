@@ -24,8 +24,8 @@
                     <div class="column"></div>
                     <div class="column">
                         <h1 class="ui center aligned header">新規キャンペーン登録</h1>
-                        <form class="ui form" method="post" action="/register"
-                              th:action="@{~/register}">
+                        <form class="ui form" method="post" action="/registerCampaign"
+                              th:action="@{~/registerCampaign}">
                             <div class="field">
                                 <input required type="text" maxlength='20' name="title" placeholder="キャンペーンタイトル" th:value="(${campaign.title}!=null)?${campaign.title}"/>
                             </div>

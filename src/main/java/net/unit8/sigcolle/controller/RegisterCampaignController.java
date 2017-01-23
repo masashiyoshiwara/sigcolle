@@ -34,13 +34,11 @@ public class RegisterCampaignController {
     @Inject
     DomaProvider domaProvider;
 
-    public HttpResponse index(CampaignForm form, Flash flash) throws IOException {
-        Session session = new Session();
-        String name = (String) session.get("userId");
+    public HttpResponse index(CampaignForm form, Flash flash,Session session) throws IOException {
 
-        if(name == null){
+        if(session.get("userId") == null){
         return templateEngine.render("index",
-                "campaign", new CampaignForm()
+                "login", new CampaignForm()
         );
     }
         return templateEngine.render("registerCampaign",
