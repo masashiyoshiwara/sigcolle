@@ -37,6 +37,8 @@ public class MyApplicationFactory implements ApplicationFactory {
             r.get("/login").to(LoginController.class, "index");
             r.post("/login").to(LoginController.class, "login");
             r.get("/logout").to(LoginController.class, "logout");
+            r.get("/registerCampaign").to(RegisterCampaignController.class, "index");
+            r.post("/registerCampaign").to(RegisterCampaignController.class, "register");
         }).compile();
 
         app.use(new DefaultCharsetMiddleware());
