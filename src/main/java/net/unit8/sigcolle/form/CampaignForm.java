@@ -30,7 +30,9 @@ public class CampaignForm extends FormBase {
     public String getTitle() {
         return title;
     }
-    public String getStatement(){return statement;}
+    public String getStatement() {
+        return statement;
+    }
     public Long getGoalLong() {
         return Long.parseLong(goal);
     }
